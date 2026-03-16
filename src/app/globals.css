@@ -1,0 +1,111 @@
+@import "tailwindcss";
+
+/* ===== Design System: "Modern Teacher" + "Warm Welcome" Blend ===== */
+
+@theme inline {
+  /* Primary palette */
+  --color-primary: #0D9488;
+  --color-primary-light: #14B8A6;
+  --color-primary-dark: #0F766E;
+  --color-primary-50: #F0FDFA;
+
+  /* Accent */
+  --color-accent: #F97316;
+  --color-accent-light: #FB923C;
+  --color-accent-dark: #EA580C;
+
+  /* Warm tones */
+  --color-terracotta: #C67B5C;
+  --color-terracotta-light: #D4956F;
+
+  /* Backgrounds */
+  --color-cream: #F5F0E1;
+  --color-beige: #EDE8D5;
+  --color-beige-deep: #E8E0CE;
+  --color-warm-white: #FAF7F0;
+
+  /* Text */
+  --color-text: #134E4A;
+  --color-text-muted: #5F7A76;
+  --color-text-light: #7A9A96;
+
+  /* Semantic */
+  --color-success: #22C55E;
+  --color-warning: #F59E0B;
+  --color-error: #EF4444;
+
+  /* Tool theme colors */
+  --color-tool-purple: #6366F1;
+  --color-tool-green: #10B981;
+
+  /* Fonts */
+  --font-heading: var(--font-varela-round);
+  --font-body: var(--font-nunito-sans);
+  --font-accent: var(--font-caveat);
+
+  /* Spacing */
+  --spacing-section: 5rem;
+
+  /* Border radius - soft claymorphism */
+  --radius-sm: 0.5rem;
+  --radius-md: 0.75rem;
+  --radius-lg: 1rem;
+  --radius-xl: 1.5rem;
+  --radius-2xl: 2rem;
+}
+
+/* Base styles */
+body {
+  background: var(--color-cream);
+  color: var(--color-text);
+  font-family: var(--font-body), system-ui, sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading), system-ui, sans-serif;
+}
+
+/* Smooth scroll */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Clay card style */
+.clay-card {
+  background: var(--color-warm-white);
+  border-radius: var(--radius-xl);
+  border: 2px solid var(--color-beige);
+  box-shadow:
+    8px 8px 16px rgba(0, 0, 0, 0.06),
+    -4px -4px 12px rgba(255, 255, 255, 0.8),
+    inset 0 1px 0 rgba(255, 255, 255, 0.6);
+  transition: transform 0.2s ease-out, box-shadow 0.2s ease-out;
+}
+
+.clay-card:hover {
+  transform: translateY(-4px);
+  box-shadow:
+    12px 12px 24px rgba(0, 0, 0, 0.08),
+    -6px -6px 16px rgba(255, 255, 255, 0.9),
+    inset 0 1px 0 rgba(255, 255, 255, 0.6);
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .clay-card:hover {
+    transform: none;
+  }
+  * {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Selection color */
+::selection {
+  background: var(--color-primary);
+  color: white;
+}
